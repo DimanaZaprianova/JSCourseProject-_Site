@@ -64,7 +64,7 @@ hr {
 }
 
 .registerbtn:hover {
-  opacity: 1;
+  opacity:0.6;
 }
 
 /* Add a blue text color to links */
