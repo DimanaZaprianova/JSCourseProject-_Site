@@ -1,0 +1,539 @@
+@keyframes slideTop {
+	from {
+		margin-top: 50%;
+	}
+}
+
+@keyframes slideBottom {
+	from {
+		margin-top: -50%;
+	}
+}
+
+@keyframes slideIn {
+	from {
+		width: 0;
+	}
+	to {
+		width: 140px;
+	}
+}
+
+@keyframes fillOut {
+	from {
+		width: 140px;
+	}
+}
+
+@keyframes fade {
+	from {
+		opacity: 0;
+	}
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	outline: 0;
+}
+
+#page {
+    font-size: 20px;
+    border: 1em outset #6b6b6a;
+    font-weight: 900;
+    color: #1E1616;
+
+    /* задаваме изображение за фон */
+    background-image: url(../images/blue2.png);
+    /* винаги задаваме и цвят, ако не се зареди картинката */
+    background-color: #41484E;
+
+    /* картинката ще заеме цялата област и нито една част от нея нама да бъде изрязана.
+    Пропорциите няма да се запазят */
+    background-size: 100% 100%;
+}
+body {
+	font-family: Arial;
+	font-size: 14px;
+}
+
+section {
+	padding: 96px 330px 0 170px;
+	margin: 0 10%;
+}
+
+a {
+	display: inline-block;
+	height: 80px;
+	margin-top: -80px;
+}
+
+h2 {
+	animation: slideTop 1s;
+}
+
+h2,
+main aside ul li {
+	position: relative;
+	padding-left: 50px;
+}
+
+h2:before {
+	position: absolute;
+	content: '';
+	left: 10px;
+	top: 20px;
+	width: 0px;
+	height: 0px;
+	border: 8px solid #00aaff;
+	border-top-width: 9px;
+	border-right-width: 9px;
+	box-shadow: 2px 2px 0 2px white;
+	transform: scaleX(0.5) rotate(45deg);
+}
+
+h2:after,
+main aside ul li:after {
+	position: absolute;
+	content: '';
+	left: 0px;
+	top: -5px;
+	width: 37px;
+	height: 37px;
+	border-radius: 18px;
+	box-shadow: 0 -3px 0px 1px white;
+	background: url('../images/sprites.svg') no-repeat -5px -6px / 350px #00aaff;
+}
+
+h2.profile:after {
+	background-position: -210px -6px;
+}
+
+h2.experience:after {
+	background-position: -72px -6px;
+}
+
+h2.education:after {
+	background-position: -308px -205px;
+}
+
+h2.languages:after {
+	background-position: -309px -239px;
+}
+
+h2.software:after {
+	background-position: -309px -272px;
+}
+
+h2.interests:after {
+	background-position: -4px -139px;
+}
+
+header {
+	white-space: nowrap;
+}
+
+header nav {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	padding: 0 10%;
+	box-sizing: border-box;
+	background-color: black;
+	color: white;
+	z-index: 10;
+	animation: slideBottom 1s;
+}
+
+header nav a {
+	display: inline-block;
+	height: 50px;
+	padding: 0 20px;
+	margin: 0;
+	box-sizing: border-box;
+	line-height: 50px;
+	text-decoration: none;
+	color: white;
+}
+
+header nav a:hover {
+	border-bottom: 3px solid #00aaff;
+}
+
+header nav a:active {
+	color: #00aaff;
+}
+
+header div,
+header aside,
+main div,
+main aside {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	box-sizing: border-box;
+	vertical-align: top;
+	white-space: normal;
+}
+
+header div {
+	margin-bottom: 50px;
+	animation: fade 2s;
+}
+
+header div img {
+	float: left;
+	width: 110px;
+	margin: -6px 0 0 -130px;
+	border-radius: 55px;
+}
+
+header div h1 {
+	margin: 24px 0 10px;
+	font-size: 40px;
+	font-weight: normal;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+header div p {
+	color: #cdd8dd;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 20px;
+}
+
+header aside,
+main aside {
+	width: 280px;
+	margin: 0 -330px 0 50px;
+}
+
+header aside h2 {
+	margin-bottom: 20px;
+}
+
+header aside ul {
+	margin-bottom: 50px;
+	list-style: none;
+	color: #999999;
+}
+
+header aside ul li {
+	position: relative;
+	padding-left: 36px;
+	line-height: 24px;
+}
+
+header aside ul li:before {
+	content: '';
+	position: absolute;
+	left: 6px;
+	top: 0;
+	width: 24px;
+	height: 24px;
+	background: url('../images/sprites.svg') no-repeat 0px 0px / 300px transparent;
+	-webkit-filter: invert(100%);
+	filter: invert(100%);
+}
+
+header aside ul li.address:before {
+	background-position: -182px -237px;
+}
+
+header aside ul li.phone:before {
+	background-position: -36px -179px;
+}
+
+header aside ul li.email:before {
+	background-position: -66px -151px;
+}
+
+main {
+	position: relative;
+	margin-left: -30px;
+	white-space: nowrap;
+}
+
+main div {
+	margin-bottom: 50px;
+	border-left: 1px solid black;
+}
+
+main div h2 {
+	margin-left: -19px;
+	z-index: 1;
+}
+
+main div dl {
+	position: relative;
+	padding:  30px 0 20px 30px;
+}
+
+main div dl dt {
+	position: relative;
+	float: left;
+	width: 120px;
+	margin: 8px 50px 0 -170px;
+	box-sizing: border-box;
+	text-align: right;
+	font-size: 11px;
+	color: #999999;
+}
+
+main div dl dt:after {
+	content: '';
+	position: absolute;
+	right: -26px;
+	top: 0px;
+	width: 7px;
+	height: 7px;
+	border: 3px solid white;
+	border-radius: 7px;
+	background-color: #00aaff;
+}
+
+main div dl dd {
+	margin-bottom: 30px;
+	font-size: 14px;
+	color: #999999;
+}
+
+main div dl dd h3 {
+	font-weight: normal;
+	font-size: 20px;
+	color: black;
+}
+
+main div dl dd p {
+	margin-bottom: 10px;
+	font-size: 16px;
+	color: #cdd8dd;
+}
+
+main aside h2 {
+	margin-bottom: 30px;
+}
+
+main aside ol,
+main aside ul {
+	margin-bottom: 50px;
+	list-style: none;
+}
+
+main aside h2.languages + ol li {
+	font-size: 16px;
+}
+
+main aside ol li {
+	position: relative;
+	padding-right: 150px;
+	line-height: 30px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+main aside ol li:before {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 0px;
+ 	height: 100%;
+	background: radial-gradient(circle, #00aaff 36%, #cccccc 40%, transparent 44%) repeat-x right center / 20px 20px;
+	animation: slideIn 1s both 1s ease;
+}
+
+main aside ol li:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 0px;
+	height: 100%;
+	background: radial-gradient(circle, #cccccc 40%, transparent 44%) repeat-x right center / 20px 20px;
+	animation: fillOut 1s forwards 2.5s ease-out;
+}
+
+main aside ol li .rank7:after {
+	width: 0px;
+}
+
+main aside ol li.rank6:after {
+	width: 20px;
+}
+
+main aside ol li.rank5:after {
+	width: 40px;
+}
+
+main aside ol li.rank4:after {
+	width: 60px;
+}
+
+main aside ol li.rank3:after {
+	width: 80px;
+}
+
+main aside ol li.rank2:after {
+	width: 100px;
+}
+
+main aside ol li.rank1:after {
+	width: 120px;
+}
+
+main aside ul li {
+	display: inline-block;
+	width: 49%;
+	box-sizing: border-box;
+	padding-left: 40px;
+	margin-bottom: 5px;
+	line-height: 31px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #999999;
+}
+
+main aside ul li:after {
+	top: 0;
+	left: 3px;
+	width: 31px;
+	height: 31px;
+	border-radius: 15px;
+	box-shadow: none;
+	background-size: 300px;
+}
+
+main aside ul li.sports:after {
+	background-position: -4px -263px;
+}
+
+main aside ul li.travel:after {
+	background-position: -236px -264px;
+}
+
+main aside ul li.reading:after {
+	background-position: -265px -235px;
+}
+
+main aside ul li.theater:after {
+	background-position: -207px -237px;
+}
+
+@media screen and (max-width: 900px) {
+
+	section {
+		padding: 46px 0 0;
+	}
+
+	a {
+		height: 30px;
+		margin-top: -30px;
+	}
+
+	header aside,
+	main aside {
+		display: block;
+		width: auto;
+		margin: 0;
+	}
+
+	header nav {
+		height: 0;
+		padding: 0px 0 0;
+	}
+
+	header nav:before {
+		content: '';
+		position: absolute;
+		right: 5px;
+		top: 5px;
+		width: 40px;
+		height: 40px;
+		background: linear-gradient(0deg, white 0%, white 16%, transparent 16%, transparent 42%, white 42%, white 58%, transparent 58%, transparent 84%, white 84%) no-repeat center center / 16px 16px;
+		background-color: rgba(0,0,0,0.75);
+		opacity: 1;
+		transition: opacity 0.5s ease 0.5s;
+	}
+
+	header nav a {
+		position: relative;
+		display: block;
+		float: right;
+		clear: both;
+		width: 0;
+		padding: 0;
+		text-indent: 20px;
+		background-color: rgba(0,0,0,0.75);
+		opacity: 0;
+		z-index: 1;
+		transition: width 0.5s, opacity 0.5s;
+	}
+
+	header nav:hover a {
+		width: 100%;
+		opacity: 1;
+	}
+
+	header nav:hover:before {
+		opacity: 0;
+		transition: opacity 0s ease 0s;
+	}
+
+	header nav a:hover {
+		border-bottom: none;
+		background-color: rgba(0,0,0,0.8);
+	}
+
+	header div {
+		padding-left: 130px;
+	}
+
+	header aside ul:after {
+		content: ' ';
+		display: block;
+		clear: both;
+	}
+
+	header aside ul li {
+		float: left;
+		width: 50%;
+		padding-left: 48px;
+		box-sizing: border-box;
+	}
+
+	main {
+		margin-left: 0;
+	}
+
+	main div {
+		width: auto;
+		margin-left: 18px;
+	}
+
+	main div dl dt {
+		float: none;
+		margin: 0 0 10px;
+		text-align: left;
+	}
+
+	main div dl dt:after {
+		left: -37px;
+		right: auto;
+	}
+
+	main aside ul li {
+		padding-left: 50px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+
+	header aside ul li {
+		float: none;
+		width: auto;
+	}
+
+}
